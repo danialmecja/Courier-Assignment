@@ -29,7 +29,7 @@ def getDistance(origin, destination):
         print(f'Other error occurred: {err}')
 
 
-hubs = [[3.0319924887507144, 101.37344116244806, "City-Link Express", "Port Klang"],
+hubs = [[3.0319924887507144, 101.37344116244806, "Ninja-Van", "Port Klang"],
         [3.112924170027219, 101.63982650389863, "Pos Laju", "Petaling Jaya"],
         [3.265154613796736, 101.68024844550233, "GDEX", "Batu Caves"],
         [2.9441205329488325, 101.7901521759029, "J&T", "Kajang"],

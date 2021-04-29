@@ -13,7 +13,7 @@ Nearest Hub for Given Customer
 
     For customer 1, delivering from Rawang to Bukit Jelutong
 
-         Customer 1 via City-Link Express hub : 99.032 KM
+         Customer 1 via Ninja-Van hub : 99.032 KM
          Customer 1 via Pos Laju hub : 63.24 KM
          Customer 1 via GDEX hub : 61.087 KM
          Customer 1 via J&T hub : 124.942 KM
@@ -25,7 +25,7 @@ Nearest Hub for Given Customer
 
     For customer 2, delivering from Subang Jaya to Puncak Alam
 
-         Customer 2 via City-Link Express hub : 70.249 KM
+         Customer 2 via Ninja-Van hub : 70.249 KM
          Customer 2 via Pos Laju hub : 56.016 KM
          Customer 2 via GDEX hub : 77.01 KM
          Customer 2 via J&T hub : 105.96 KM
@@ -37,7 +37,7 @@ Nearest Hub for Given Customer
 
     For customer 3, delivering from Ampang to Cyberjaya
 
-         Customer 3 via City-Link Express hub : 111.776 KM
+         Customer 3 via Ninja-Van hub : 111.776 KM
          Customer 3 via Pos Laju hub : 53.555 KM
          Customer 3 via GDEX hub : 72.422 KM
          Customer 3 via J&T hub : 52.392 KM
