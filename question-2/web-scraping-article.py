@@ -1,4 +1,4 @@
-# Importing packages dam u r geh goddam u r geh fahad omg
+# Importing packages
 import requests
 from bs4 import BeautifulSoup
 
