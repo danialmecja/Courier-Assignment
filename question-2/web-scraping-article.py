@@ -177,6 +177,20 @@ for company in companies:
                 neutral_word_list.remove(word)
                 negative_word_list.append(word)
         counter += 1
+        filename_positive = "Positive words "+str(company)
+        file_positive = open(filename_positive, 'a')
+        filename_negative = "Negative words "+str(company)
+        file_negative = open(filename_negative, 'a')
+        filename_neutral = "Neutral words "+str(company)
+        file_neutral = open(filename_neutral, 'a')
+
+        file_positive.writelines("% s\n" % lines for lines in positive_word_list)
+        file_negative.writelines("% s\n" % lines for lines in negative_word_list)
+        file_neutral.writelines("% s\n" % lines for lines in neutral_word_list)
+
+        file_positive.close()
+        file_negative.close()
+        file_neutral.close()
 
         # Counting the frequencies and sort them of of word-frequency pairs by descending frequency.
         dictionary = wordListToFreqDict(word_list)
