@@ -1,5 +1,11 @@
 from plotly.offline import plot
-data_or_figure = [{"x": [1, 2, 3], "y": [3, 1, 6]}]
-plot_, plotdivid, width, height = plot(
-    data_or_figure, False, "", True, filename='file.html')
-print(plot_)
+import plotly.express as px
+
+sentiment_table = {'courier': ['DHL', 'PosLaju', 'NinjaVan', 'DHL', 'PosLaju', 'NinjaVan', 'DHL', 'PosLaju', 'NinjaVan'],
+            'sentiment': ['Positive', 'Positive', 'Positive', 'Negative', 'Negative', 'Negative', 'Neutral', 'Neutral', 'Neutral'],
+            'count': [7, 9, 3, 3, 2, 0, 10, 12,7]
+            }
+fig = px.bar(sentiment_table, title='Sentiment Graph', x="courier", y="count", color="sentiment")
+#data_or_figure = [{"x": DHL_Sentiment}]
+plot(
+    fig, False, "", True, filename='file.html')
