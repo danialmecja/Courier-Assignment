@@ -186,11 +186,11 @@ for company in companies:
                 neutral_word_list.remove(word)
                 negative_word_list.append(word)
         counter += 1
-        filename_positive = "Positive words "+str(company)
+        filename_positive = "Positive words "+str(company)+".txt"
         file_positive = open(filename_positive, 'a')
-        filename_negative = "Negative words "+str(company)
+        filename_negative = "Negative words "+str(company)+".txt"
         file_negative = open(filename_negative, 'a')
-        filename_neutral = "Neutral words "+str(company)
+        filename_neutral = "Neutral words "+str(company)+".txt"
         file_neutral = open(filename_neutral, 'a')
 
         file_positive.writelines("% s\n" % lines for lines in positive_word_list)
