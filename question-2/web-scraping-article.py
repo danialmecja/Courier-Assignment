@@ -7,18 +7,27 @@ from bs4 import BeautifulSoup
 from trie import Trie
 
 # Importing Stop Words
-stopW = open("question-2\stopwords.txt", "r")
+#stopW = open("question-2\stopwords.txt", "r")
+# Importing Stop Words - MacOS
+stopW = open("question-2/stopwords.txt", "r")
+
 try:
     content = stopW.read()
     stop_words = content.split(",")
 finally:
     stopW.close()
 
-#  Importing Positive Words
-positive_words = open("question-2\positivewords.txt").read().splitlines()
+# #  Importing Positive Words
+# positive_words = open("question-2\positivewords.txt").read().splitlines()
 
-# Importing Negative Words
-negative_words = open("question-2\\negativewords.txt").read().splitlines()
+# # Importing Negative Words
+# negative_words = open("question-2\\negativewords.txt").read().splitlines()
+
+#  Importing Positive Words - MacOS
+positive_words = open("question-2/positivewords.txt").read().splitlines()
+
+# Importing Negative Words - MacOS
+negative_words = open("question-2/negativewords.txt").read().splitlines()
 
 
 # Functions for counting the word frequency as well as sorting them
