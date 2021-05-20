@@ -59,5 +59,15 @@ sentiment_table = {'courier': ['DHL', 'GDex', 'JNT', 'NinjaVan', 'PosLaju'],  #t
             'positive': [len(DHL_positive_words), len(GDex_positive_words), len(JNT_positive_words), len(NinjaVan_positive_words), len(PosLaju_positive_words)],    # first numbers refer to the total number of sentiment words for first courier and so on
             'negative': [len(DHL_negative_words), len(GDex_negative_words), len(JNT_negative_words), len(NinjaVan_negative_words), len(PosLaju_negative_words)], 
             }
-fig = px.bar(sentiment_table, title='Sentiment Graph', x="courier", y=["positive", "negative"])   #plotting the graph 
-plot(fig, False, "", True, filename="question-2/sentiment-graph.html")  #display the graph in file.html
+
+def plot_sentiment_graph(sentiment_table):
+
+    # plotting the graph 
+    fig = px.bar(sentiment_table, title='Sentiment Graph', x="courier", y=["positive", "negative"])
+    
+    # display the graph in file.html
+    plot(fig, False, "", True, filename="question-2/sentiment-graph.html")  
+
+plot_sentiment_graph(sentiment_table)
+
+print(len(DHL_negative_words))
