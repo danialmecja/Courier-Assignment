@@ -47,7 +47,7 @@ def sortFreqDict(freqdict):
 
 companies = ["DHL","PosLaju","NinjaVan","JNT","GDex"]
 
-urls_DHL = ["https://www.theedgemarkets.com/article/dhl-delivers-first-batch-covid19-vaccines-malaysia",
+urls_DHL = ["https://www.thestar.com.my/aseanplus/aseanplus-news/2021/05/17/dhl-express-dedicates-direct-flights-to-penang-and-vietnam039s-ho-chi-minh-city",
             "https://www.theedgemarkets.com/article/tech-digitalisation-way-forward-dhl-express",
             "https://www.suasnews.com/2020/12/dhl-express-malaysia-partners-aerodyne-group-on-drone-delivery-services/"]
 
@@ -59,7 +59,7 @@ urls_NinjaVan = ["https://www.theedgemarkets.com/article/ninja-van-capitalising-
                  "https://themalaysianreserve.com/2020/10/26/ninja-van-malaysia-sees-shift-in-demand-as-e-commerce-grows/",
                  "https://www.theedgemarkets.com/article/ninja-van-use-funds-raised-boost-malaysian-ops"]
 
-urls_JNT = ["https://www.theedgemarkets.com/article/jt-incident-caused-workload-employees-commission-%E2%80%94-ministry",
+urls_JNT = ["https://www.thestar.com.my/news/nation/2021/02/07/courier-company-says-sorry-over-039violent-sorting-of-packages039",
             "https://www.malaymail.com/news/malaysia/2021/02/07/courier-company-jt-express-explains-staffs-violent-handling-of-parcels-caug/1947791",
             "https://www.therakyatpost.com/2021/02/07/jt-express-protests-whats-going-on-how-to-claim-your-money-back/"]
 
@@ -135,7 +135,6 @@ for company in companies:
                 for p in div.find_all('p'):
                     tags += p.text
 
-
         # Next we parse the saved section to only accept text and delete all html markup
         if(url_uses_class):
             article = tags
@@ -186,27 +185,26 @@ for company in companies:
                 neutral_word_list.remove(word)
                 negative_word_list.append(word)
         counter += 1
-        filename_positive = "Positive words "+str(company)+".txt"
-        file_positive = open(filename_positive, 'a')
-        filename_negative = "Negative words "+str(company)+".txt"
-        file_negative = open(filename_negative, 'a')
-        filename_neutral = "Neutral words "+str(company)+".txt"
-        file_neutral = open(filename_neutral, 'a')
+        # filename_positive = "Positive words "+str(company)+".txt"
+        # file_positive = open(filename_positive, 'a')
+        # filename_negative = "Negative words "+str(company)+".txt"
+        # file_negative = open(filename_negative, 'a')
+        # filename_neutral = "Neutral words "+str(company)+".txt"
+        # file_neutral = open(filename_neutral, 'a')
 
-        file_positive.writelines("% s\n" % lines for lines in positive_word_list)
-        file_negative.writelines("% s\n" % lines for lines in negative_word_list)
-        file_neutral.writelines("% s\n" % lines for lines in neutral_word_list)
+        # file_positive.writelines("% s\n" % lines for lines in positive_word_list)
+        # file_negative.writelines("% s\n" % lines for lines in negative_word_list)
+        # file_neutral.writelines("% s\n" % lines for lines in neutral_word_list)
 
-        file_positive.close()
-        file_negative.close()
-        file_neutral.close()
+        # file_positive.close()
+        # file_negative.close()
+        # file_neutral.close()
 
         # Counting the frequencies and sort them of of word-frequency pairs by descending frequency.
         dictionary = wordListToFreqDict(word_list)
         word_freq_list = sortFreqDict(dictionary)
         
         # for s in word_freq_list: print(str(s))
-
         print("\n\n\n")
         print("------------------------------------------------------------------",end="\n")
         print("Article " + str(counter) + " of " + str(company), end="\n")
