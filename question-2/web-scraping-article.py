@@ -204,6 +204,7 @@ for company in companies:
         # Counting the frequencies and sort them of of word-frequency pairs by descending frequency.
         dictionary = wordListToFreqDict(word_list)
         word_freq_list = sortFreqDict(dictionary)
+        
         # for s in word_freq_list: print(str(s))
 
         print("\n\n\n")
