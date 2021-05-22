@@ -7,5 +7,6 @@ limited
 friction
 volatile
 rail
-denies
+freeze
+sluggish
 loss
