@@ -185,6 +185,8 @@ for company in companies:
                 neutral_word_list.remove(word)
                 negative_word_list.append(word)
         counter += 1
+
+        # Printing the sentiments in .txt files for positive, neutral, and negative words
         # filename_positive = "Positive words "+str(company)+".txt"
         # file_positive = open(filename_positive, 'a')
         # filename_negative = "Negative words "+str(company)+".txt"
