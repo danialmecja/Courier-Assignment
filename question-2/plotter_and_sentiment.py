@@ -90,34 +90,68 @@ print("DHL - Length of negative words:", len(DHL_negative_words) - 1)
 print("DHL - Length of neutral words:", len(DHL_neutral_words) - 1)
 print("DHL - Length of positive words:", len(DHL_positive_words) - 1)
 
-def calc_positivity_negativity(positive, negative):
-    courier = ""
 
-    if positive == DHL_positive_words and negative == DHL_negative_words:
-        courier = "DHL"
-    elif positive == GDex_positive_words and negative == GDex_negative_words:
-        courier = "GDex"
-    elif positive == JNT_positive_words and negative == JNT_negative_words:
-        courier = "JNT"
-    elif positive == NinjaVan_positive_words and negative == NinjaVan_negative_words:
-        courier = "NinjaVan"
-    elif positive == PosLaju_positive_words and negative == PosLaju_negative_words:
-        courier = "PosLaju"
+def calc_positivity_negativity():
 
-    positive = len(positive)
-    negative = len(negative)
+    companies = ["DHL","PosLaju","NinjaVan","JNT","GDex"]
+    posi_negi_table = {}
 
-    positivity = (positive) / (positive + negative)
-    negativity = 1 - positivity
+    for company in companies:
+        if(company == "DHL"):
+            positive = len(DHL_positive_words)
+            negative = len(DHL_negative_words)
+        elif(company == "PosLaju"):
+            positive = len(PosLaju_positive_words)
+            negative = len(PosLaju_negative_words)
+        elif(company == "NinjaVan"):
+            positive = len(NinjaVan_positive_words)
+            negative = len(NinjaVan_negative_words)
+        elif(company == "JNT"):
+            positive = len(JNT_positive_words)
+            negative = len(JNT_negative_words)
+        elif(company == "GDex"):
+            positive = len(GDex_positive_words)
+            negative = len(GDex_negative_words)
 
-    print(f"{courier} courier has a positivity and negativity sentiment of:")
-    return round(positivity, 3), round(negativity, 3)
-    
 
-print(calc_positivity_negativity(DHL_positive_words, DHL_negative_words))
-print(calc_positivity_negativity(GDex_positive_words, GDex_negative_words))
-print(calc_positivity_negativity(JNT_positive_words, JNT_negative_words))
-print(calc_positivity_negativity(NinjaVan_positive_words, NinjaVan_negative_words))
-print(calc_positivity_negativity(PosLaju_positive_words, PosLaju_negative_words))
+        positivity = (positive) / (positive + negative)
+        negativity = 1 - positivity
+
+        positivity = round(positivity, 3)
+        negativity = round(negativity, 3)
+        posi_negi_table[company] = [positivity, negativity]
+
+    return posi_negi_table
+
+
+
+print(calc_positivity_negativity())
+
+
+
+# def calc_positivity_negativity(positive, negative):
+#     courier = ""
+
+#     if positive == DHL_positive_words and negative == DHL_negative_words:
+#         courier = "DHL"
+#     elif positive == GDex_positive_words and negative == GDex_negative_words:
+#         courier = "GDex"
+#     elif positive == JNT_positive_words and negative == JNT_negative_words:
+#         courier = "JNT"
+#     elif positive == NinjaVan_positive_words and negative == NinjaVan_negative_words:
+#         courier = "NinjaVan"
+#     elif positive == PosLaju_positive_words and negative == PosLaju_negative_words:
+#         courier = "PosLaju"
+
+#     positive = len(positive)
+#     negative = len(negative)
+
+#     positivity = (positive) / (positive + negative)
+#     negativity = 1 - positivity
+
+#     print(f"{courier} courier has a positivity and negativity sentiment of:")
+#     return round(positivity, 3), round(negativity, 3)
+
+
 
 
