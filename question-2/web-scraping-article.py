@@ -10,18 +10,11 @@ from trie import Trie
 #stopW = open("question-2\stopwords.txt", "r")
 # Importing Stop Words - MacOS
 stopW = open("question-2/stopwords.txt", "r")
-
 try:
     content = stopW.read()
     stop_words = content.split(",")
 finally:
     stopW.close()
-
-# #  Importing Positive Words
-# positive_words = open("question-2\positivewords.txt").read().splitlines()
-
-# # Importing Negative Words
-# negative_words = open("question-2\\negativewords.txt").read().splitlines()
 
 #  Importing Positive Words - MacOS
 positive_words = open("question-2/positivewords.txt").read().splitlines()
@@ -233,7 +226,10 @@ def article_analysis(company):
         print("------------------------------------------------------------------",end="\n")
 
 article_analysis('DHL')
+<<<<<<< HEAD
 # article_analysis('NinjaVan')
 # article_analysis('PosLaju')
 # article_analysis('JNT')
 # article_analysis('GDex')
+=======
+>>>>>>> 30761fe530d42ed51c4a6fecd132b5709bfe7fd3
