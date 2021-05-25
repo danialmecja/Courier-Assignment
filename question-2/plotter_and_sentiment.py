@@ -127,6 +127,8 @@ def calc_positivity_negativity():
 
 print(calc_positivity_negativity())
 
+# Last part of Prob. 2, k. is we have to rank the posi-negi table
+
 
 
 # def calc_positivity_negativity(positive, negative):

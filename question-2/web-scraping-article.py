@@ -34,10 +34,6 @@ def sortFreqDict(freqdict):
     return aux
 
 
-
-
-
-
 companies = ["DHL","PosLaju","NinjaVan","JNT","GDex"]
 
 urls_DHL = ["https://www.thestar.com.my/aseanplus/aseanplus-news/2021/05/17/dhl-express-dedicates-direct-flights-to-penang-and-vietnam039s-ho-chi-minh-city",
@@ -60,9 +56,17 @@ urls_GDex = ["https://www.theedgemarkets.com/article/gdex-partners-tasco-improve
              "https://www.theedgemarkets.com/article/gdex-stands-benefit-pickup-ecommerce-activities-says-kenanga-research",
              "https://www.theedgemarkets.com/article/gdex-look-creating-industrial-reit-part-next-growth-phase"]
 
+def article_sentiment_comparison(positive_word_list, negative_word_list, counter, company):
+    
+    if(len(positive_word_list) > len(negative_word_list) ):
+        print('Article ' + str(counter) + ' of courier ' + company +' is positive!')    
+    else:
+        print('Article ' + str(counter) + ' of courier ' + company + ' is negative.')
 
-
-for company in companies:
+# To analyse the articles of courier companies in Malaysia
+# Printing its 
+def article_analysis(company):
+    
     counter = 0
     if(company == "DHL"):
         urls = urls_DHL
@@ -73,7 +77,7 @@ for company in companies:
     elif(company == "JNT"):
         urls = urls_JNT
     elif(company == "GDex"):
-        urls = urls_GDex
+        urls = urls_GDex   
 
     for url in urls:
         # Request the url using python request library
@@ -157,7 +161,7 @@ for company in companies:
         neutral_word_list = word_list.copy()
 
 
-        # Filtering The Positive Words using Trie algorithm and storing it in happy_word_list
+        # Filtering The Positive Words using Trie algorithm and storing it in positive_word_list
         positive_word_list = []
         positiveWordTrie = Trie()
         for positive_word in positive_words:
@@ -179,21 +183,25 @@ for company in companies:
                 negative_word_list.append(word)
         counter += 1
 
-        # Printing the sentiments in .txt files for positive, neutral, and negative words
-        # filename_positive = "Positive words "+str(company)+".txt"
-        # file_positive = open(filename_positive, 'a')
-        # filename_negative = "Negative words "+str(company)+".txt"
-        # file_negative = open(filename_negative, 'a')
-        # filename_neutral = "Neutral words "+str(company)+".txt"
-        # file_neutral = open(filename_neutral, 'a')
+        article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
+        
+        """
+        Printing the sentiments in .txt files for positive, neutral, and negative words
+        filename_positive = "Positive words "+str(company)+".txt"
+        file_positive = open(filename_positive, 'a')
+        filename_negative = "Negative words "+str(company)+".txt"
+        file_negative = open(filename_negative, 'a')
+        filename_neutral = "Neutral words "+str(company)+".txt"
+        file_neutral = open(filename_neutral, 'a')
 
-        # file_positive.writelines("% s\n" % lines for lines in positive_word_list)
-        # file_negative.writelines("% s\n" % lines for lines in negative_word_list)
-        # file_neutral.writelines("% s\n" % lines for lines in neutral_word_list)
+        file_positive.writelines("% s\n" % lines for lines in positive_word_list)
+        file_negative.writelines("% s\n" % lines for lines in negative_word_list)
+        file_neutral.writelines("% s\n" % lines for lines in neutral_word_list)
 
-        # file_positive.close()
-        # file_negative.close()
-        # file_neutral.close()
+        file_positive.close()
+        file_negative.close()
+        file_neutral.close()
+        """
 
         # Counting the frequencies and sort them of of word-frequency pairs by descending frequency.
         dictionary = wordListToFreqDict(word_list)
@@ -214,3 +222,5 @@ for company in companies:
         print("The Neutral Word List: ")
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
+
+article_analysis('DHL')
