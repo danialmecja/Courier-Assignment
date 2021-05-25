@@ -124,36 +124,6 @@ def calc_positivity_negativity():
     return posi_negi_table
 
 
-
 print(calc_positivity_negativity())
 
 # Last part of Prob. 2, k. is we have to rank the posi-negi table
-
-
-
-# def calc_positivity_negativity(positive, negative):
-#     courier = ""
-
-#     if positive == DHL_positive_words and negative == DHL_negative_words:
-#         courier = "DHL"
-#     elif positive == GDex_positive_words and negative == GDex_negative_words:
-#         courier = "GDex"
-#     elif positive == JNT_positive_words and negative == JNT_negative_words:
-#         courier = "JNT"
-#     elif positive == NinjaVan_positive_words and negative == NinjaVan_negative_words:
-#         courier = "NinjaVan"
-#     elif positive == PosLaju_positive_words and negative == PosLaju_negative_words:
-#         courier = "PosLaju"
-
-#     positive = len(positive)
-#     negative = len(negative)
-
-#     positivity = (positive) / (positive + negative)
-#     negativity = 1 - positivity
-
-#     print(f"{courier} courier has a positivity and negativity sentiment of:")
-#     return round(positivity, 3), round(negativity, 3)
-
-
-
-
