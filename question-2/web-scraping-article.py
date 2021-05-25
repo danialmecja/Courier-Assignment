@@ -41,7 +41,7 @@ urls_DHL = ["https://www.thestar.com.my/aseanplus/aseanplus-news/2021/05/17/dhl-
             "https://www.suasnews.com/2020/12/dhl-express-malaysia-partners-aerodyne-group-on-drone-delivery-services/"]
 
 urls_PosLaju = ["https://www.thestar.com.my/news/nation/2020/09/08/pos-malaysias-sendparcel-to-hit-record-breaking-two-million-parcels-monthly",
-                "https://www.freemalaysiatoday.com/category/nation/2020/11/14/under-attack-pos-malaysia-says-doing-its-best-to-speed-up-deliveries/",
+                "https://www.thestar.com.my/news/nation/2018/11/14/wild-animals-for-sale-via-mail-unusual-but-not-new",
                 "https://www.thestar.com.my/opinion/letters/2019/04/17/delivery-by---poslaju-needs-to-be-improved/"]
 
 urls_NinjaVan = ["https://www.theedgemarkets.com/article/ninja-van-capitalising-opportunities-presented-pandemic",
@@ -220,11 +220,6 @@ def article_analysis(company):
         print("The Neutral Word List: ")
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
-
-<<<<<<< HEAD
         article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
 
-article_analysis('DHL')
-=======
-article_analysis('PosLaju')
->>>>>>> 41f2c1ac12a88b7c3640f11e8bb95652fcc5f38f
+article_analysis('GDex')
