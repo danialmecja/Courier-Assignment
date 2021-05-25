@@ -223,4 +223,4 @@ def article_analysis(company):
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
 
-article_analysis('DHL')
+article_analysis('PosLaju')
