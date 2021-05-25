@@ -70,7 +70,7 @@ finally:
     PosLaju_negative.close()
     PosLaju_neutral.close()
 
-sentiment_table = {'courier': ['DHL', 'GDex', 'JNT', 'NinjaVan', 'PosLaju'],  #these are just dummy data, need to replace with actual ones which we webscrapped
+sentiment_table = {'courier': ['DHL', 'GDex', 'JNT', 'NinjaVan', 'PosLaju'], 
             'positive': [len(DHL_positive_words), len(GDex_positive_words), len(JNT_positive_words), len(NinjaVan_positive_words), len(PosLaju_positive_words)],    # first numbers refer to the total number of sentiment words for first courier and so on
             'negative': [len(DHL_negative_words), len(GDex_negative_words), len(JNT_negative_words), len(NinjaVan_negative_words), len(PosLaju_negative_words)], 
             }

@@ -221,6 +221,10 @@ def article_analysis(company):
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
 
+<<<<<<< HEAD
         article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
 
 article_analysis('DHL')
+=======
+article_analysis('PosLaju')
+>>>>>>> 41f2c1ac12a88b7c3640f11e8bb95652fcc5f38f
