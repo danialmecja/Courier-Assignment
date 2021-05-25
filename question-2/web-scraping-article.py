@@ -182,8 +182,6 @@ def article_analysis(company):
                 neutral_word_list.remove(word)
                 negative_word_list.append(word)
         counter += 1
-
-        article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
         
         """
         Printing the sentiments in .txt files for positive, neutral, and negative words
@@ -222,5 +220,7 @@ def article_analysis(company):
         print("The Neutral Word List: ")
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
+
+        article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
 
 article_analysis('DHL')
