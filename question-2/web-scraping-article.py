@@ -192,8 +192,10 @@ def article_analysis(company):
 
         article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
         
+        
+        
+        #Printing the sentiments in .txt files for positive, neutral, and negative words
         """
-        Printing the sentiments in .txt files for positive, neutral, and negative words
         filename_positive = "Positive words "+str(company)+".txt"
         file_positive = open(filename_positive, 'a')
         filename_negative = "Negative words "+str(company)+".txt"
@@ -231,3 +233,7 @@ def article_analysis(company):
         print("------------------------------------------------------------------",end="\n")
 
 article_analysis('DHL')
+# article_analysis('NinjaVan')
+# article_analysis('PosLaju')
+# article_analysis('JNT')
+# article_analysis('GDex')
