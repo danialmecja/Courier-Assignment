@@ -10,18 +10,11 @@ from trie import Trie
 #stopW = open("question-2\stopwords.txt", "r")
 # Importing Stop Words - MacOS
 stopW = open("question-2/stopwords.txt", "r")
-
 try:
     content = stopW.read()
     stop_words = content.split(",")
 finally:
     stopW.close()
-
-# #  Importing Positive Words
-# positive_words = open("question-2\positivewords.txt").read().splitlines()
-
-# # Importing Negative Words
-# negative_words = open("question-2\\negativewords.txt").read().splitlines()
 
 #  Importing Positive Words - MacOS
 positive_words = open("question-2/positivewords.txt").read().splitlines()
@@ -221,34 +214,3 @@ for company in companies:
         print("The Neutral Word List: ")
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
