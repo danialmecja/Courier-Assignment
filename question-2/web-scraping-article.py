@@ -41,7 +41,7 @@ urls_DHL = ["https://www.thestar.com.my/aseanplus/aseanplus-news/2021/05/17/dhl-
             "https://www.suasnews.com/2020/12/dhl-express-malaysia-partners-aerodyne-group-on-drone-delivery-services/"]
 
 urls_PosLaju = ["https://www.thestar.com.my/news/nation/2020/09/08/pos-malaysias-sendparcel-to-hit-record-breaking-two-million-parcels-monthly",
-                "https://www.freemalaysiatoday.com/category/nation/2020/11/14/under-attack-pos-malaysia-says-doing-its-best-to-speed-up-deliveries/",
+                "https://www.thestar.com.my/news/nation/2018/11/14/wild-animals-for-sale-via-mail-unusual-but-not-new",
                 "https://www.thestar.com.my/opinion/letters/2019/04/17/delivery-by---poslaju-needs-to-be-improved/"]
 
 urls_NinjaVan = ["https://www.theedgemarkets.com/article/ninja-van-capitalising-opportunities-presented-pandemic",
@@ -182,8 +182,6 @@ def article_analysis(company):
                 neutral_word_list.remove(word)
                 negative_word_list.append(word)
         counter += 1
-
-        article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
         
         
         
@@ -224,7 +222,9 @@ def article_analysis(company):
         print("The Neutral Word List: ")
         print(neutral_word_list , end="\n \n")
         print("------------------------------------------------------------------",end="\n")
+        article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
 
+<<<<<<< HEAD
 article_analysis('DHL')
 <<<<<<< HEAD
 # article_analysis('NinjaVan')
@@ -233,3 +233,6 @@ article_analysis('DHL')
 # article_analysis('GDex')
 =======
 >>>>>>> 30761fe530d42ed51c4a6fecd132b5709bfe7fd3
+=======
+article_analysis('GDex')
+>>>>>>> e7df683cd19ce60aec872e47c79508c6b9d821f1
