@@ -224,15 +224,12 @@ def article_analysis(company):
         print("------------------------------------------------------------------",end="\n")
         article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
 
-<<<<<<< HEAD
+
 article_analysis('DHL')
-<<<<<<< HEAD
+
 # article_analysis('NinjaVan')
 # article_analysis('PosLaju')
 # article_analysis('JNT')
 # article_analysis('GDex')
-=======
->>>>>>> 30761fe530d42ed51c4a6fecd132b5709bfe7fd3
-=======
+
 article_analysis('GDex')
->>>>>>> e7df683cd19ce60aec872e47c79508c6b9d821f1
