@@ -226,10 +226,8 @@ def article_analysis(company):
 
 
 article_analysis('DHL')
-
 # article_analysis('NinjaVan')
 # article_analysis('PosLaju')
 # article_analysis('JNT')
 # article_analysis('GDex')
-
-article_analysis('GDex')
+# article_analysis('GDex')
