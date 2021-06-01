@@ -40,14 +40,14 @@ for cust in distances:
             min_courier = courier
 
 
-print("Weighted score = distance - distance*positivity\n")
+print("Weighted score = distance - (distance * positivity)\n")
 
 for cust in pd:
     min_pd = 999
     min_dist = 999
     print("For %s, weighted score of distance and positivity are:" % (cust))
     for courier in pd.get(cust):
-        print(" -%s = %.2f" % (courier,  pd.get(cust).get(courier)))
+        print(" - %s = %.2f" % (courier,  pd.get(cust).get(courier)))
         if (pd.get(cust).get(courier) < min_pd):
             min_pd = pd.get(cust).get(courier)
             min__pd_courier = courier
