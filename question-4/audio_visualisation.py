@@ -8,11 +8,11 @@ from fastdtw import fastdtw
 
 # Read stored audio files for comparison
 fs1, data1 = wavfile.read("question-4/kami_ingin_memohon_maaf.wav")
-fs2, data2 = wavfile.read("question-4/Hafizthingy.wav")
-fs3, data3 = wavfile.read("question-4/Hafizthingydifferent.wav")
-fs4, data4 = wavfile.read("question-4/IguessthatsokayHafiz.wav")
+fs2, data2 = wavfile.read("question-4/Hafiz_memohon_maaf_similar.wav")
+fs3, data3 = wavfile.read("question-4/Hafiz_memohon_maaf_different.wav")
+fs4, data4 = wavfile.read("question-4/Hafiz_apologising_english.wav")
 
-# Take the max values along axis
+# Take the max values (amplitude) along axis
 data1 = np.amax(data1, axis=1)
 data2 = np.amax(data2, axis=1)
 data3 = np.amax(data3, axis=1)
@@ -24,19 +24,16 @@ figure(num=None, figsize=(12, 6), dpi=80, facecolor='w', edgecolor='k')
 plt.gcf().clear()
 plt.style.use('seaborn-whitegrid')
 
-#
 # Plot 2x2 grid
-#
 
-#
-# Doors and corners, kid. That's where they get you.
-#
+
+# JNT: "Kami ingin memohon maaf"
 ax = plt.subplot(2, 2, 1)
 ax.plot(data1, color='#67A0DA')
 
 # Change Title
-ax.set_title("JNT memohon maaf")
-ax.title.set_fontsize(10)
+ax.set_title('JNT: "Kami ingin memohon maaf"')
+ax.title.set_fontsize(13)
 
 # change the style of the axis spines
 ax.spines['top'].set_color('none')
@@ -48,14 +45,14 @@ ax.set_xticklabels([])
 
 
 #
-# Doors and corners, kid. That's where they get you. (v2)
+# Hafiz: "Kami ingin memohon maaf" - Similar speed & intonation
 #
 ax = plt.subplot(2, 2, 2)
 ax.plot(data2, color='#DAA067')
 
 # Change Title
-ax.set_title("Hafiz memohon maaf")
-ax.title.set_fontsize(10)
+ax.set_title('Hafiz: "Kami ingin memohon maaf" - Similar speed & intonation')
+ax.title.set_fontsize(13)
 
 # change the style of the axis spines
 ax.spines['top'].set_color('none')
@@ -67,14 +64,14 @@ ax.set_xticklabels([])
 
 
 #
-# You walk into the room too fast, the room eats you.
+# Hafiz: "Kami ingin memohon maaf" - Different speed & intonation
 #
 ax = plt.subplot(2, 2, 3)
 ax.plot(data3, color='#3FBF7F')
 
 # Change Title
-ax.set_title("Hafiz memohon maaf - diff intonation")
-ax.title.set_fontsize(10)
+ax.set_title('Hafiz: "Kami ingin memohon maaf" - Different speed & intonation')
+ax.title.set_fontsize(13)
 
 # change the style of the axis spines
 ax.spines['top'].set_color('none')
@@ -86,14 +83,14 @@ ax.set_xticklabels([])
 
 
 #
-# Doors and corners, kid. That's where they get you. (v3)
+# Hafiz: "We want to apologise" - Similar speed & intonation
 #
 ax = plt.subplot(2, 2, 4)
 ax.plot(data4, color='#DADA67')
 
 # Change Title
-ax.set_title("Hafiz apologising in English")
-ax.title.set_fontsize(10)
+ax.set_title('Hafiz: "We want to apologise" - Similar speed & intonation')
+ax.title.set_fontsize(13)
 
 # change the style of the axis spines
 ax.spines['top'].set_color('none')
