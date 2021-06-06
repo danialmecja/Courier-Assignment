@@ -11,14 +11,16 @@ results =   {
 # Create the map plotter:
 apikey = 'AIzaSyAEmwryz_HN3i80CoDeHu_oCuv_91vIIkI'  # (your API key here)
 
-map_style = {
-    "featureType": "administrative.locality",
-    "stylers": [
-        {"visibility": "off"}
-    ]
-}
+style = [
+    {
+        "featureType": "administrative.locality",
+        "stylers": [
+            {"visibility":"off"}
+        ]
+    }
+]
 
-gmap = gmplot.GoogleMapPlotter(3.139, 101.6869, 14, title="courier-q1", map_styles=map_style, apikey=apikey)
+gmap = gmplot.GoogleMapPlotter(3.139, 101.6869, 14, title="courier-q1", map_styles=style, apikey=apikey)
 
 def getDistance(origin, destination):
     try:
@@ -33,6 +35,25 @@ def getDistance(origin, destination):
         print(f'HTTP error occurred: {http_err}')
     except Exception as err:
         print(f'Other error occurred: {err}')
+
+def getNextGap(gap):
+    gap = (gap * 10)/13
+    if gap < 1:
+        return 1
+    return int(gap)
+
+def combSort(arr):
+    n = len(arr)
+    gap = n
+    swapped = True
+ 
+    while gap !=1 or swapped == 1:
+        gap = getNextGap(gap)
+        swapped = False
+        for i in range(0, n-gap):
+            if arr[i][0] > arr[i + gap][0]:     ##comparisons based on value[i][0] which stores the distance to be compared
+                arr[i], arr[i + gap]=arr[i + gap], arr[i]
+                swapped = True
 
 
 hubs = [[3.0319924887507144, 101.37344116244806, "Ninja-Van", "Port Klang"],
@@ -55,40 +76,40 @@ for i in range(5):
     gmap.text(hubs[i][0], hubs[i][1], hubs[i][2], color='black')
 
 
-
+distances = [0]*3
 
 print("Orgin to Destinations Distanaces\n")
 for i in range(3):
     print(" Customer {} - {} to {}".format(i+1, origin_cord[i][2], dest_cord[i][2]))
     print("     -Distance : {} KM\n".format(getDistance(origin_cord[i], dest_cord[i])/1000))
-    gmap.marker(origin_cord[i][0], origin_cord[i][1], label=i+1, color='green', title=origin_cord[i][2])
-    #gmap.text(origin_cord[i][0], origin_cord[i][1], origin_cord[i][2], color='black')
-    gmap.marker(dest_cord[i][0], dest_cord[i][1], label=i+1, color='red', title=dest_cord[i][2])
-    #gmap.text(dest_cord[i][0], dest_cord[i][1], dest_cord[i][2], color='black')
+    gmap.text(origin_cord[i][0]-0.01, origin_cord[i][1], origin_cord[i][2], color='black')
+    gmap.text(dest_cord[i][0]-0.01, dest_cord[i][1], dest_cord[i][2], color='black')
+    gmap.text(origin_cord[i][0], origin_cord[i][1], "Customer "+str(i+1), color='black')
+    gmap.text(dest_cord[i][0], dest_cord[i][1], "Customer "+str(i+1), color='black')
 
 print("Nearest Hub for Given Customer")
 for i in range(3):
     print("\n    For customer {}, delivering from {} to {}\n".format(i+1, origin_cord[i][2], dest_cord[i][2]))
-    min = 99999     # stores the minimum distance through a hub
-    hub = 0         # stores the index of the nearest hub
+    arr = [0]*5     ## stores the distance distances for each courier for a given customer, along with courier cords, name and location
     for j in range(5):
         distance = getDistance(origin_cord[i], hubs[j]) + getDistance(hubs[j], dest_cord[i])
+        cust = "Customer " + str(i+1)
+        arr[j] = [round(distance/1000, 3), hubs[j][0], hubs[j][1] ,hubs[j][2], hubs[j][3]]
         print("         Customer {} via {} hub : {} KM".format(i+1, hubs[j][2], distance/1000))
-        if distance<min:
-            min = distance
-            hub = j
 
+    combSort(arr)       ## comb sorts the array
+    distances[i] = arr
 
-    print("\n     -Nearest hub : {} located at {}".format(hubs[hub][2], hubs[hub][3]))
-    origin_to_hub = getDistance(origin_cord[i], hubs[hub])/1000
-    hub_to_target = getDistance(hubs[hub], dest_cord[i])/1000
-    print("         Distance: {} KM (Origin to Hub: {} KM, Hub to Destination {} KM)".format(origin_to_hub + hub_to_target, origin_to_hub, hub_to_target))
+    print("\n     -Nearest hub : {} located at {}".format(arr[0][3], arr[0][4]))
+    print("         Distance: {} KM".format(arr[0][0]))
     gmap.directions(
         (origin_cord[i][0], origin_cord[i][1]),
         (dest_cord[i][0], dest_cord[i][1]),
-        waypoints=[(hubs[hub][0], hubs[hub][1])]
+        waypoints=[(arr[0][1], arr[0][2])]
     )
     print("     ")
+
+print(distances)
 
 # Draw the map:
 gmap.draw('courier_q1.html')
