@@ -1,4 +1,9 @@
 import matplotlib
+from ..question1.courier_q1 import results
+
+import sys, os
+
+
 
 # 'courier' : [positivity, negativity]
 couriers = {'DHL': [0.661, 0.339],
