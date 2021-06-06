@@ -7,9 +7,9 @@ from bs4 import BeautifulSoup
 from trie import Trie
 
 # Importing Stop Words
-#stopW = open("question-2\stopwords.txt", "r")
+#stopW = open("question2\stopwords.txt", "r")
 # Importing Stop Words - MacOS
-stopW = open("question-2/stopwords.txt", "r")
+stopW = open("question2/stopwords.txt", "r")
 try:
     content = stopW.read()
     stop_words = content.split(",")
@@ -17,10 +17,10 @@ finally:
     stopW.close()
 
 #  Importing Positive Words - MacOS
-positive_words = open("question-2/positivewords.txt").read().splitlines()
+positive_words = open("question2/positivewords.txt").read().splitlines()
 
 # Importing Negative Words - MacOS
-negative_words = open("question-2/negativewords.txt").read().splitlines()
+negative_words = open("question2/negativewords.txt").read().splitlines()
 
 
 # Functions for counting the word frequency as well as sorting them
@@ -215,22 +215,22 @@ def article_analysis(company):
 
     
         
-        # for s in word_freq_list: print(str(s))
-        # print("\n\n\n")
-        # print("------------------------------------------------------------------",end="\n")
-        # print("Article " + str(counter) + " of " + str(company), end="\n")
-        # print("The word List: ")
-        # print(word_list , end="\n \n")
-        # print("The Frequency Word List: ")
-        # print(word_freq_list , end="\n \n")
-        # print("The Positive Word List: ")
-        # print(positive_word_list , end="\n \n")
-        # print("The Negative Word List: ")
-        # print(negative_word_list , end="\n \n")
-        # print("The Neutral Word List: ")
-        # print(neutral_word_list , end="\n \n")
-        # print("------------------------------------------------------------------",end="\n")
-        # article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
+        for s in word_freq_list: print(str(s))
+        print("\n\n\n")
+        print("------------------------------------------------------------------",end="\n")
+        print("Article " + str(counter) + " of " + str(company), end="\n")
+        print("The word List: ")
+        print(word_list , end="\n \n")
+        print("The Frequency Word List: ")
+        print(word_freq_list , end="\n \n")
+        print("The Positive Word List: ")
+        print(positive_word_list , end="\n \n")
+        print("The Negative Word List: ")
+        print(negative_word_list , end="\n \n")
+        print("The Neutral Word List: ")
+        print(neutral_word_list , end="\n \n")
+        print("------------------------------------------------------------------",end="\n")
+        article_sentiment_comparison(positive_word_list, negative_word_list, counter, company)
 
 
 article_analysis('DHL')

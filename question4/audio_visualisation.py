@@ -7,10 +7,10 @@ from scipy.spatial.distance import euclidean
 from fastdtw import fastdtw
 
 # Read stored audio files for comparison
-fs1, data1 = wavfile.read("question-4/kami_ingin_memohon_maaf.wav")
-fs2, data2 = wavfile.read("question-4/Hafiz_memohon_maaf_similar.wav")
-fs3, data3 = wavfile.read("question-4/Hafiz_memohon_maaf_different.wav")
-fs4, data4 = wavfile.read("question-4/Hafiz_apologising_english.wav")
+fs1, data1 = wavfile.read("question4/kami_ingin_memohon_maaf.wav")
+fs2, data2 = wavfile.read("question4/Hafiz_memohon_maaf_similar.wav")
+fs3, data3 = wavfile.read("question4/Hafiz_memohon_maaf_different.wav")
+fs4, data4 = wavfile.read("question4/Hafiz_apologising_english.wav")
 
 # Take the max values (amplitude) along axis
 data1 = np.amax(data1, axis=1)
