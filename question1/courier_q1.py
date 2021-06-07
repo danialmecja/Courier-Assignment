@@ -93,7 +93,6 @@ for i in range(3):
     arr = [0]*5     ## stores the distance distances for each courier for a given customer, along with courier cords, name and location
     for j in range(5):
         distance = getDistance(origin_cord[i], hubs[j]) + getDistance(hubs[j], dest_cord[i])
-        cust = "Customer " + str(i+1)
         arr[j] = [round(distance/1000, 3), hubs[j][0], hubs[j][1] ,hubs[j][2], hubs[j][3]]
         print("         Customer {} via {} hub : {} KM".format(i+1, hubs[j][2], distance/1000))
 
