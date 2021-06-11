@@ -2,29 +2,29 @@ from plotly.offline import plot
 import plotly.express as px
 
 #DHL SENTIMENT WORDS
-DHL_positive = open("question-2/Sentiment/Positive Words DHL.txt", "r")
-DHL_negative = open("question-2/Sentiment/Negative Words DHL.txt", "r")
-DHL_neutral = open("question-2/Sentiment/Neutral Words DHL.txt", "r")
+DHL_positive = open("question2/Sentiment/Positive Words DHL.txt", "r")
+DHL_negative = open("question2/Sentiment/Negative Words DHL.txt", "r")
+DHL_neutral = open("question2/Sentiment/Neutral Words DHL.txt", "r")
 
 #GDEX SENTIMENT WORDS
-GDex_positive = open("question-2/Sentiment/Positive Words GDex.txt", "r")
-GDex_negative = open("question-2/Sentiment/Negative Words GDex.txt", "r")
-GDex_neutral = open("question-2/Sentiment/Neutral Words GDex.txt", "r")
+GDex_positive = open("question2/Sentiment/Positive Words GDex.txt", "r")
+GDex_negative = open("question2/Sentiment/Negative Words GDex.txt", "r")
+GDex_neutral = open("question2/Sentiment/Neutral Words GDex.txt", "r")
 
 #JNT SENTIMENT WORDS
-JNT_positive = open("question-2/Sentiment/Positive Words JNT.txt", "r")
-JNT_negative = open("question-2/Sentiment/Negative Words JNT.txt", "r")
-JNT_neutral = open("question-2/Sentiment/Neutral Words JNT.txt", "r")
+JNT_positive = open("question2/Sentiment/Positive Words JNT.txt", "r")
+JNT_negative = open("question2/Sentiment/Negative Words JNT.txt", "r")
+JNT_neutral = open("question2/Sentiment/Neutral Words JNT.txt", "r")
 
 #NINJAVAN SENTIMENT WORDS
-NinjaVan_positive = open("question-2/Sentiment/Positive Words NinjaVan.txt", "r")
-NinjaVan_negative = open("question-2/Sentiment/Negative Words NinjaVan.txt", "r")
-NinjaVan_neutral = open("question-2/Sentiment/Neutral Words NinjaVan.txt", "r")
+NinjaVan_positive = open("question2/Sentiment/Positive Words NinjaVan.txt", "r")
+NinjaVan_negative = open("question2/Sentiment/Negative Words NinjaVan.txt", "r")
+NinjaVan_neutral = open("question2/Sentiment/Neutral Words NinjaVan.txt", "r")
 
 #POSLAJU SENTIMENT WORDS
-PosLaju_positive = open("question-2/Sentiment/Positive Words PosLaju.txt", "r")
-PosLaju_negative = open("question-2/Sentiment/Negative Words PosLaju.txt", "r")
-PosLaju_neutral = open("question-2/Sentiment/Neutral Words PosLaju.txt", "r")
+PosLaju_positive = open("question2/Sentiment/Positive Words PosLaju.txt", "r")
+PosLaju_negative = open("question2/Sentiment/Negative Words PosLaju.txt", "r")
+PosLaju_neutral = open("question2/Sentiment/Neutral Words PosLaju.txt", "r")
 
 try:
     #creating a list of those words
@@ -81,7 +81,7 @@ def plot_sentiment_graph(sentiment_table):
     fig = px.bar(sentiment_table, title='Positive & Negative Sentiment Graph', x="courier", y=["positive", "negative"])
     
     # display the graph in file.html
-    plot(fig, False, "", True, filename="question-2/sentiment-graph.html")  
+    plot(fig, False, "", True, filename="question2/sentiment-graph.html")  
 
 # Function for plotting sentiment graph - uncomment to use it
 # plot_sentiment_graph(sentiment_table)
