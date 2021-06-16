@@ -59,7 +59,7 @@ def combSort(arr):
                 arr[i], arr[i + gap]=arr[i + gap], arr[i]
                 swapped = True
 
-print("Weighted score = (1 - dist_x/dist_sum) * (weight + positvity * (1-weight)\n")
+print("Weighted score = (1 - dist_x/dist_sum) * (weight + positivity * (1-weight)\n")
 
 pd = [0]*3
 weight = 0.5

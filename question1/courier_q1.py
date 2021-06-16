@@ -78,7 +78,7 @@ for i in range(5):
 
 distances = [0]*3
 
-print("Orgin to Destinations Distanaces\n")
+print("Orgin to Destinations Distances\n")
 for i in range(3):
     print(" Customer {} - {} to {}".format(i+1, origin_cord[i][2], dest_cord[i][2]))
     print("     -Distance : {} KM\n".format(getDistance(origin_cord[i], dest_cord[i])/1000))
