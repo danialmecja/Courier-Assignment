@@ -29,7 +29,6 @@ def compare_1_and_2():
     plt.plot(data1, color='#67A0DA')
     plt.plot(data2, color='#DAA067', alpha=0.5)
     fig=plt.show()
-    display(fig)
 
 def compare_1_and_3():
     print("The distance between clip 1 and clip 3 is:", fastdtw(data1, data3)[0])
@@ -39,7 +38,6 @@ def compare_1_and_3():
     plt.plot(data1, color='#67A0DA', alpha=0.5)
     plt.plot(data3, color='#3FBF7F', alpha=0.5)
     fig=plt.show()
-    display(fig)
 
 def compare_1_and_4():
     print("The distance between clip 1 and clip 4 is:", fastdtw(data1, data4)[0])
@@ -49,7 +47,6 @@ def compare_1_and_4():
     plt.plot(data1, color='#67A0DA')
     plt.plot(data4, color='#DADA67', alpha=0.5)
     fig=plt.show()
-    display(fig)
 
 def calculate_distance():
     distance1_2 = fastdtw(data1, data2)[0]
@@ -61,15 +58,23 @@ def calculate_distance():
     print("The distance between clip 1 and clip 3 is:", distance1_3)
     print("The distance between clip 1 and clip 4 is:", distance1_4)
 
+    compare_dict = {"Distance 1 to 2": distance1_2, "Distance 1 to 3": distance1_3, "Distance 1 to 4": distance1_4}
+    
+    print("\nSorted List using TimSort:")
+    sorted_dict = dict(sorted(compare_dict.items(), key = lambda item: item[1]))
+    
+    print(sorted_dict)
+
 
 # create subplots - comparing all
-# ax = plt.subplot(1, 1, 1)
-# ax.plot(data1, color=("#67A0DA"), alpha=0.5)
-# ax.plot(data2, color="#DAA067", alpha=0.5)
-# ax.plot(data3, color='#DADA67', alpha=0.5)
-# ax.plot(data4, color='#3FBF7F', alpha=0.5)
-# fig = plt.show()
-# display(fig)
+def visualise_all():
+    ax = plt.subplot(1, 1, 1)
+    ax.plot(data1, color=("#67A0DA"), alpha=0.5) # Blue - Sample file
+    ax.plot(data2, color="#DAA067", alpha=0.5)   # Orange - Similar intonation + speed
+    ax.plot(data3, color='#fcfc44', alpha=0.5)   # Yellow - Diff. intonation + speed
+    ax.plot(data4, color='#21de80', alpha=0.5)   # Light green - Diff. Language - Similar intonation + speed
+    fig = plt.show()
 
 
+visualise_all()
 calculate_distance()
