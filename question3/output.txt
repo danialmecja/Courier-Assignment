@@ -1,0 +1,60 @@
+Weighted score = (1 - dist_x/dist_sum) * positvity
+Customer 1
+  DHL
+  - Distance Score: 0.8659
+  - Weighted Score: 0.5723
+  GDEX
+  - Distance Score: 0.8481
+  - Weighted Score: 0.6030
+  Pos Laju
+  - Distance Score: 0.8428
+  - Weighted Score: 0.5141
+  Ninja-Van
+  - Distance Score: 0.7538
+  - Weighted Score: 0.6061
+  J&T
+  - Distance Score: 0.6894
+  - Weighted Score: 0.4384
+
+-Best Weighted Score: 0.6061 via Ninja-Van
+-Best Distance Score: 0.8659 via DHL
+
+Customer 2
+  DHL
+  - Distance Score: 0.8668
+  - Weighted Score: 0.5729
+  Pos Laju
+  - Distance Score: 0.8430
+  - Weighted Score: 0.5142
+  Ninja-Van
+  - Distance Score: 0.8031
+  - Weighted Score: 0.6457
+  GDEX
+  - Distance Score: 0.7841
+  - Weighted Score: 0.5575
+  J&T
+  - Distance Score: 0.7030
+  - Weighted Score: 0.4471
+
+-Best Weighted Score: 0.6457 via Ninja-Van
+-Best Distance Score: 0.8668 via DHL
+
+Customer 3
+  J&T
+  - Distance Score: 0.8600
+  - Weighted Score: 0.5470
+  Pos Laju
+  - Distance Score: 0.8553
+  - Weighted Score: 0.5217
+  GDEX
+  - Distance Score: 0.8065
+  - Weighted Score: 0.5734
+  DHL
+  - Distance Score: 0.7769
+  - Weighted Score: 0.5135
+  Ninja-Van 
+  - Distance Score: 0.7013
+  - Weighted Score: 0.5639
+
+-Best Weighted Score: 0.5734 via GDEX
+-Best Distance Score: 0.8600 via J&T
