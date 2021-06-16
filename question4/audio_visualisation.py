@@ -3,8 +3,6 @@ from scipy.io import wavfile
 from matplotlib import pyplot as plt
 import numpy as np
 
-from scipy.spatial.distance import euclidean
-from fastdtw import fastdtw
 
 # Read stored audio files for comparison
 fs1, data1 = wavfile.read("question4/kami_ingin_memohon_maaf.wav")
@@ -44,7 +42,6 @@ ax.set_yticklabels([])
 ax.set_xticklabels([])
 
 
-#
 # Hafiz: "Kami ingin memohon maaf" - Similar speed & intonation
 #
 ax = plt.subplot(2, 2, 2)
@@ -102,5 +99,4 @@ ax.set_xticklabels([])
 
 
 # Display created figure
-fig=plt.show()
-display(fig)
+fig = plt.show()
